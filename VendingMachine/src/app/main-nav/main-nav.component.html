@@ -3,9 +3,10 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Vending Machine</a>
-      <a mat-list-item href="#">Log In</a>
-      <a mat-list-item href="#">Account</a>
+      <a mat-list-item href="/vendingmachine">Vending Machine</a>
+      <a mat-list-item href="/login">Log In</a>
+      <a mat-list-item href="/register">Register</a>
+      <a mat-list-item href="/account">Account</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="body">
@@ -15,12 +16,21 @@
         <mat-icon aria-label="Side nav toggle icon" class="leftIcon">menu</mat-icon>
       </button>
       <div class="topNav">
-        <span class="headerTitle">Vending Machine App</span>
-        <div *ngIf="!(isHandset$ | async)" id="mainLogo"><mat-icon> fastfood</mat-icon></div>
+        <span class="headerTitle noOutline" routerLink="/home">Vending Machine App</span>
+        <div *ngIf="!(isHandset$ | async)" routerLink="/home" class="noOutline" id="mainLogo">
+          <mat-icon> fastfood</mat-icon>
+        </div>
         <div class="topNavLinks">
-          <a *ngIf="!(isHandset$ | async)" href="#"> Vending Machine </a>
-          <a *ngIf="!(isHandset$ | async)" href="#"> Log In </a>
-          <a *ngIf="!(isHandset$ | async)" href="#"> Account </a>
+          <a *ngIf="!(isHandset$ | async)" class="noOutline" mat-button routerLink="/vendingmachine"> Vending Machine </a>
+          <a *ngIf="!(isHandset$ | async)" class="noOutline" mat-button routerLink="/login"> Log
+            In</a>
+          <a *ngIf="!(isHandset$ | async)" class="noOutline" mat-button routerLink="/register">Register </a>
+          <button *ngIf="!(isHandset$ | async)" class="noOutline" mat-button [matMenuTriggerFor]="beforeMenu"
+            >Account</button>
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item routerLink="/account">Account</button>
+            <button mat-menu-item>Log out</button>
+          </mat-menu>
         </div>
       </div>
 
