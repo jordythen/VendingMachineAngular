@@ -1,0 +1,35 @@
+h1{
+  font-family: 'Play', sans-serif;
+  font-size: xx-large;
+  text-align: center
+  ;
+}
+
+form {
+  font-family: 'Play', sans-serif;
+  font-size: x-large;
+  
+}
+.regForm{
+  
+  background-color: azure;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+button {
+  background-color: pink;
+  font-size: x-large;
+  font-family: 'Play', sans-serif;
+  
+}
+
+.regButtonSec{
+  display:grid;
+  justify-items: center;
+  justify-content: center;
+}
