@@ -1,5 +1,6 @@
 <h1>Please enter registration information!</h1>
 <form>			
+	<div class="regForm">
 	<table>
     		<tr>
 		        <td><label for="firstName">First Name:</label></td>
@@ -9,13 +10,23 @@
 			</tr>
 			<tr>
 				<td><label for="email">Email:</label></td>
-				<td><input type="text" maxlength="30" id="email" name="email" required></td>
+				<td><input type="email" maxlength="30" id="email" name="email" required></td>
+				<td><label for="payment">&emsp;Payment of: $</label></td>
+        		<td><input type="number" placeholder="000.00" step="0.01" min="0" max="999.99" id="payment" name="payment" required></td>
 			</tr>
 			<tr>
 		    	<td><label for="username">Username:</label></td>
 				<td><input type="text" maxlength="30" id="username" name="username" required></td>
 				<td><label for="password">&emsp;Password:</label></td>
 				<td><input type="password" minlength="8" maxlength="30" id="password" name="password" required></td>
-    </table>	
-	<button type="button">Next!</button>
+			</tr>
+				
+				
+			
+		</table>	
+		<div class="regButtonSec">
+			<button type="button">Finalize Account!</button>
+		
+		</div>
+	</div>
 </form>
