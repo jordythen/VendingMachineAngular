@@ -3,23 +3,28 @@
 
     <form method="post" onsubmit="return false;">
         <div class="grid-form img-rounded">
-            <div class="grid-field-title grid-field img-rounded"><label> LOGIN </label> </div>
-            <div class="grid-field grid-field-1"><label for="username">Username or email </label><input id="username" type="text"
-                    class="form-control" name="username" placeholder="Username/email" required></div>
+            <div class="grid-field-title grid-field img-rounded">
+                <label> LOGIN </label> 
+            </div>
+            <div class="grid-field grid-field-1">
+                <label for="username">Username or email </label>
+                <input type="text" class="form-control" name="username" placeholder="Username/email" [(ngModel)]="username" required>
+            </div>
             <div class="grid-field"></div>
             <div class=" grid-field grid-field-2">
-                <div><label for="password">Password </label><input id="password" class="form-control"
-                        name="password" type="password" placeholder="Password" required></div>
+                <div>
+                    <label for="password">Password </label>
+                    <input class="form-control" name="password" type="password" placeholder="Password" [(ngModel)]="password" required>
+                </div>
                 <div style="justify-self: end; padding-right: 50px;"><a href="forgotpassword.php">forgot
                         password</a></div>
-
             </div>
         </div>
 
 
 
         <div class="grid-field grid-field-huge">
-            <input type="submit" id="login-submit" class="btn btn-primary btn-md" name="submit" value="Log In" />
+            <input type="submit" id="login-submit" class="btn btn-primary btn-md" name="submit" value="Log In" (click)="login()" />
         </div>
     </form>
 </div>

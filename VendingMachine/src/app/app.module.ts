@@ -12,6 +12,10 @@ import { VendingmachineComponent } from './vendingmachine/vendingmachine.compone
 import { AccountComponent } from './account/account.component';
 import { RegisterComponent } from './register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UrlService } from './url.service';
+import { UserService } from './user.service';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RegisterComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -33,9 +38,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatIconModule,
     MatListModule,
     MatMenuModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UrlService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
