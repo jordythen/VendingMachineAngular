@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, OnInit, OnChanges } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./main-nav.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class MainNavComponent implements OnInit {
+export class MainNavComponent implements OnInit, OnChanges {
 
   constructor(private userService: UserService,
               private breakpointObserver: BreakpointObserver,
@@ -28,23 +28,29 @@ export class MainNavComponent implements OnInit {
     );
 
   ngOnInit(): void {
-    this.userService.getLoggedUser().subscribe(
+    this.userService.loginUser(null, null).subscribe(
       resp => {
+        console.log(resp);
         this.loggedUser = resp;
-        if (this.loggedUser !== null){
+        if (this.loggedUser){
           console.log('User is logged in!');
-        }else if(this.loggedUser === null){
+          console.log("User's first name: " + this.loggedUser.firstname);
+        }else if (!this.loggedUser){
           console.log('User is NOT logged in.');
-
         }
       }
     );
+  }
 
+  ngOnChanges(){
     this.userService.loginUser(null, null).subscribe(
       resp => {
         this.loggedUser = resp;
-        if (this.loggedUser === null){
-          console.log('User is not logged in!');
+        if (this.loggedUser != null){
+          console.log('User is logged in!');
+          console.log("On changes: " + this.loggedUser);
+        }else if (this.loggedUser == null){
+          console.log('User is NOT logged in.');
         }
       }
     );

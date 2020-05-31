@@ -30,6 +30,11 @@ export class LoginComponent implements OnInit {
     this.userService.loginUser(null, null).subscribe(
       resp => {
         this.loggedUser = resp;
+        if (this.loggedUser){
+          console.log('User is logged in! <- login.component.ts');
+        }else if (!this.loggedUser){
+          console.log('User is NOT logged in.  <- login.component.ts');
+        }
       }
     );
   }
