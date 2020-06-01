@@ -7,9 +7,13 @@ h1{
 
 form {
   font-family: 'Play', sans-serif;
+<<<<<<< HEAD
   font-size: x-large;
   display: inline-block;
   float: left;
+=======
+  font-size: larger;
+>>>>>>> 6f58118aa6e11051420558b6b01294781e10a9c5
   
 }
 
@@ -39,6 +43,50 @@ button {
   justify-content: center;
 }
 
+<<<<<<< HEAD
 body {
   text-align: center;
+=======
+.grid-form{
+  width: 90%;
+  margin: 0 auto;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap:1.25vw;
+  background-color: white;
+  padding: 2.3vw;
+  margin-top: 20px;
+}
+.grid-field{
+  color: #9592ff;
+  padding: 10px;
+}
+  .grid-field > input{
+      margin-left: 1vw;
+  }
+
+.grid-field-title{
+  grid-column:span 2;
+  text-align: center;
+  background-color:white;
+  border-style:solid;
+  border-width:2px;
+  border-color:#9592ff;
+}
+.grid-field-huge{
+  grid-column: span 2;
+}
+
+.grid-field-6{
+  display: grid;
+  grid-row-start: 6;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap:1.25vw;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+background-color: #9592ff !important;
+}
+.btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
+background-color: #ff7571 !important;
+>>>>>>> 6f58118aa6e11051420558b6b01294781e10a9c5
 }

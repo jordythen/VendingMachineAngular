@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Please enter registration information!</h1>
 <form align="center">			
 	<div class="regForm">
@@ -20,6 +21,28 @@
 				
 		<div class="regButtonSec">
 			<br><button type="button">Finalize Account!</button>
+=======
+<form>
+	<div class="grid-form img-rounded">
+		<div class="grid-field-title grid-field img-rounded"><label> CREATE ACCOUNT </label> </div>
+		<div class="grid-field" style=""> <label for="firstName">First Name </label><input id="firstName" maxlength="30"
+				class="form-control" name="firstname" type="text" placeholder="First Name" required></div>
+		<div class="grid-field"><label for="email">Email </label><input id="email" type="email" maxlength="30" class="form-control"
+				name="email" placeholder="Email Address" required></div>
+		<div class="grid-field"><label for="lastName">Last Name </label><input id="lastName" class="form-control"
+				name="lastname" type="text" maxlength="30" placeholder="Last Name" required></div>
+		<div class="grid-field"><label for="password">Password </label><input id="password" class="form-control"
+				name="password" maxlength="30" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" type="password" placeholder="Password"
+				required></div>
+		<div class="grid-field"><label for="money">Balance </label><input id="balance" class="form-control"
+				name="money" type="number" placeholder="000.00" step="0.01" min="0" max="999.99" maxlength="30" placeholder="Enter your balance"
+				required></div>
+		<div class="grid-field grid-field-huge">
+			<input type="submit" class="btn btn-primary btn-md" style="margin-top:3ex" (click)="createAccount()" name="submit"
+				value="Create Account" />
+			<input type="reset" class="btn btn-danger btn-md" style="margin-top:3ex;" value="Clear Form" />
+>>>>>>> 6f58118aa6e11051420558b6b01294781e10a9c5
 		</div>
+
 	</div>
 </form>
