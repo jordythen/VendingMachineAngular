@@ -19,6 +19,7 @@ export class MainNavComponent implements OnInit, OnChanges {
               private breakpointObserver: BreakpointObserver,
               private router: Router) {}
   loggedUser: User;
+  account: string;
 
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
@@ -35,6 +36,7 @@ export class MainNavComponent implements OnInit, OnChanges {
         if (this.loggedUser){
           console.log('User is logged in!');
           console.log('User\'s first name: ' + this.loggedUser.firstName);
+          this.account = `${this.loggedUser.firstName} ${this.loggedUser.lastName}`;
         }else if (!this.loggedUser){
           console.log('User is NOT logged in.');
         }

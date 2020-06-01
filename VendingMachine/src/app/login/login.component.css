@@ -1,3 +1,10 @@
+
+form {
+    font-family: 'Play', sans-serif;
+    font-size: larger;
+    
+  }
+
 .form-control {
     display: block;
     padding: 6px 12px;
@@ -46,8 +53,8 @@
 .grid-field-huge {
     text-align: right;
 
-    margin-right: 20vw;
     grid-row-start: 5;
+    margin-top:47px;
 }
 
 .grid-field-1 {
@@ -66,7 +73,7 @@
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:visited {
-    background-color: #e88034 !important;
+    background-color: #f283cc !important;
     border-color: #676a6c;
 }
 
