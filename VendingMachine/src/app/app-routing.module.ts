@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { VendingmachineComponent } from './vendingmachine/vendingmachine.component';
 import { AccountComponent } from './account/account.component';
 import { RegisterComponent } from './register/register.component';
-
+import { BrowseComponent } from './browse/browse.component';
 
 const routes: Routes = [
   {
@@ -31,6 +31,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'browse',
+    component: BrowseComponent
   }
 
 ];
