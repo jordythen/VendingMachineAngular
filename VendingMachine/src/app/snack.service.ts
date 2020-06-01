@@ -39,4 +39,8 @@ export class SnackService {
   deleteSnack(snack: Snack):Observable<Object>{
     return this.http.delete(this.urlService.getUrl+'snack/'+snack.id, {withCredentials: true} ).pipe()
   }
+
+  buySnackWithMoney(snack: Snack):Observable<Object>{
+    return this.http.put(this.urlService.getUrl+'snack/buywithmoney', snack, {withCredentials: true} ).pipe();
+  }
 }
