@@ -24,15 +24,15 @@
           <mat-icon> fastfood</mat-icon>
         </div>
         <div class="topNavLinks">
-          <a *ngIf="!(isHandset$ | async)" class="noOutline" mat-button routerLink="/vendingmachine"> Vending Machine </a>
-          <a *ngIf="!(isHandset$ | async)" class="noOutline" mat-button routerLink="/login"> Log
+          <a *ngIf="!(isHandset$ | async) && loggedUser" class="noOutline" mat-button routerLink="/vendingmachine"> Vending Machine </a>
+          <a *ngIf="!(isHandset$ | async) && !loggedUser" class="noOutline" mat-button routerLink="/login"> Log
             In</a>
-          <a *ngIf="!(isHandset$ | async)" class="noOutline" mat-button routerLink="/register">Register </a>
-          <button *ngIf="!(isHandset$ | async)" class="noOutline" mat-button [matMenuTriggerFor]="beforeMenu"
+          <a *ngIf="!(isHandset$ | async) && !loggedUser" class="noOutline" mat-button routerLink="/register">Register </a>
+          <button *ngIf="!(isHandset$ | async) && loggedUser" class="noOutline" mat-button [matMenuTriggerFor]="beforeMenu"
             >Account</button>
           <mat-menu #beforeMenu="matMenu" xPosition="before">
             <button mat-menu-item routerLink="/account">Account</button>
-            <button mat-menu-item>Log out</button>
+            <button mat-menu-item (click)="logout()">Log out</button>
           </mat-menu>
         </div>
       </div>

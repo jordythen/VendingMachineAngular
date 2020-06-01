@@ -10,7 +10,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  @Output() logIn: EventEmitter<any> = new EventEmitter();
+  // @Output() logIn: EventEmitter<any> = new EventEmitter();
   loggedUser: User;
   username: string;
   password: string;
@@ -44,8 +44,9 @@ export class LoginComponent implements OnInit {
     this.userService.loginUser(this.username, this.password).subscribe(
       resp => {
         this.loggedUser = resp;
-        this.logIn.emit(null);
-        this.router.navigate(['home']);
+        // this.logIn.emit(null);
+        window.location.href = 'home';
+        //this.router.navigate(['home']);
       }
     );
   }
