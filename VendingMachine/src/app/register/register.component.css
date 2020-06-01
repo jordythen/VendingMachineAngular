@@ -8,21 +8,26 @@ h1{
 form {
   font-family: 'Play', sans-serif;
   font-size: x-large;
+  display: inline-block;
+  float: left;
   
-}
-.regForm{
-  
-  background-color: azure;
 }
 
-table {
-  margin-left: auto;
-  margin-right: auto;
+/*#payment {
+  float: right; 
+}  this can be used to put the payment input to the left */
+
+
+
+.regForm{
+  background-color: azure;
+  display: block;
+  margin: 0 auto;
   
 }
 
 button {
-  background-color: pink;
+  background-color: rgb(243, 203, 243);
   font-size: x-large;
   font-family: 'Play', sans-serif;
   
@@ -32,4 +37,8 @@ button {
   display:grid;
   justify-items: center;
   justify-content: center;
+}
+
+body {
+  text-align: center;
 }
