@@ -21,7 +21,11 @@ export class UserService {
                 username: string,
                 password: string,
                 email: string,
-                balance: string);
+                balance: number): Observable<User>{
+                  return this.http.post(this.urlService.getUrl() + 'login/register',
+                  {firstName, lastName, username, email, password, balance})
+                  .pipe( map(this.getRespToUser) );
+                }
 
 
   loginUser(username: string, password: string): Observable<User> {
@@ -44,7 +48,7 @@ export class UserService {
   getLoggedUser(): User{
     return this.loggedPerson;
   }
-
+  // takes a json response and parse it into a User ts class object
   getRespToUser(resp): User {
     const user = resp as User;
     if (user) {

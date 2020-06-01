@@ -1,21 +1,42 @@
 <form>
 	<div class="grid-form img-rounded">
 		<div class="grid-field-title grid-field img-rounded"><label> CREATE ACCOUNT </label> </div>
-		<div class="grid-field" style=""> <label for="firstName">First Name </label><input id="firstName" maxlength="30"
-				class="form-control" name="firstname" type="text" placeholder="First Name" required></div>
-		<div class="grid-field"><label for="email">Email </label><input id="email" type="email" maxlength="30" class="form-control"
-				name="email" placeholder="Email Address" required></div>
-		<div class="grid-field"><label for="lastName">Last Name </label><input id="lastName" class="form-control"
-				name="lastname" type="text" maxlength="30" placeholder="Last Name" required></div>
-		<div class="grid-field"><label for="password">Password </label><input id="password" class="form-control"
-				name="password" maxlength="30" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" type="password" placeholder="Password"
-				required></div>
-		<div class="grid-field"><label for="money">Balance </label><input id="balance" class="form-control"
-				name="money" type="number" placeholder="000.00" step="0.01" min="0" max="999.99" maxlength="30" placeholder="Enter your balance"
-				required></div>
+		<div class="grid-field" style="margin-top:30px"> 
+			<label for="firstName">First Name </label>
+			<input id="firstName"
+				maxlength="30" class="form-control" name="firstname" type="text" placeholder="First Name"
+				[(ngModel)]="firstName" required>
+			</div>
+		<div class="grid-field">
+			<label for="lastName">Last Name </label>
+			<input id="lastName" class="form-control"
+				name="lastname" type="text" maxlength="30" placeholder="Last Name" [(ngModel)]="lastName" required>
+		</div>
+		<div class="grid-field">
+			<label for="username">Username</label>
+			<input id="username" class="form-control"
+				name="username" type="text" maxlength="30" placeholder="Username" [(ngModel)]="username" required>
+		</div>
+		<div class="grid-field">
+			<label for="email">Email </label>
+			<input id="email" type="email" maxlength="30" autocomplete="off"
+				class="form-control" [(ngModel)]="email" name="email" placeholder="Email Address" required>
+		</div>
+		<div class="grid-field">
+			<label for="password">Password </label>
+			<input id="password" class="form-control"
+				name="password" maxlength="30" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" type="password"
+				placeholder="Password" [(ngModel)]="password" autocomplete="off" required>
+			</div>
+		<div class="grid-field">
+			<label for="money">Balance </label>
+			<input id="balance" class="form-control" name="money"
+				type="number" placeholder="000.00" step="0.01" min="0" max="999.99" maxlength="30"
+				placeholder="Enter your balance" [(ngModel)]="balance">
+			</div>
 		<div class="grid-field grid-field-huge">
-			<input type="submit" class="btn btn-primary btn-md" style="margin-top:3ex" (click)="createAccount()" name="submit"
-				value="Create Account" />
+			<input type="submit" class="btn btn-primary btn-md" style="margin-top:3ex" (click)="createAccount()"
+				name="submit" value="Create Account" />
 			<input type="reset" class="btn btn-danger btn-md" style="margin-top:3ex;" value="Clear Form" />
 		</div>
 
