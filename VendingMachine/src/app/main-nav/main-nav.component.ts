@@ -35,7 +35,7 @@ export class MainNavComponent implements OnInit, OnChanges {
         console.log(resp);
         console.log(resp.body);
         console.log(resp.status);
-        this.loggedUser = resp as unknown as User;
+        this.loggedUser = resp.body;
         this.statusCode = resp.status;
         if (this.loggedUser){
           console.log('User is logged in!');
