@@ -40,10 +40,7 @@ button {
   justify-content: center;
 }
 
-<<<<<<< HEAD
-body {
-  text-align: center;
-=======
+
 .grid-form{
   width: 90%;
   margin: 0 auto;
@@ -85,5 +82,4 @@ background-color: #9592ff !important;
 }
 .btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
 background-color: #ff7571 !important;
->>>>>>> 6f58118aa6e11051420558b6b01294781e10a9c5
 }
