@@ -20,6 +20,7 @@ export class MainNavComponent implements OnInit, OnChanges {
               private router: Router) {}
   loggedUser: User;
   account: string;
+  statusCode: number;
 
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
@@ -32,10 +33,15 @@ export class MainNavComponent implements OnInit, OnChanges {
     this.userService.loginUser(null, null).subscribe(
       resp => {
         console.log(resp);
-        this.loggedUser = resp;
+        console.log(resp.body);
+        console.log(resp.status);
+        this.loggedUser = resp as unknown as User;
+        this.statusCode = resp.status;
         if (this.loggedUser){
           console.log('User is logged in!');
+          console.log('This is the status code received: ' + this.statusCode);
           console.log('User\'s first name: ' + this.loggedUser.firstName);
+          console.log('User\'s email name: ' + this.loggedUser.email);
           this.account = `${this.loggedUser.firstName} ${this.loggedUser.lastName}`;
         }else if (!this.loggedUser){
           console.log('User is NOT logged in.');
@@ -47,7 +53,7 @@ export class MainNavComponent implements OnInit, OnChanges {
   ngOnChanges(){
     this.userService.loginUser(null, null).subscribe(
       resp => {
-        this.loggedUser = resp;
+        this.loggedUser = resp.body;
         if (this.loggedUser != null){
           console.log('User is logged in!');
           console.log('On changes: ' + this.loggedUser);

@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   isMobile: boolean;
+  statusCode: number;
+
   constructor(private router: Router,
               private userService: UserService,
               private mobileService: MobileServiceService) { }
@@ -29,7 +31,8 @@ export class LoginComponent implements OnInit {
     // sort of rendundant since we're already checking for this in main-nav.ts
     this.userService.loginUser(null, null).subscribe(
       resp => {
-        this.loggedUser = resp;
+        this.loggedUser = resp.body;
+        this.statusCode = resp.status;
         if (this.loggedUser){
           console.log('User is logged in! <- login.component.ts');
         }else if (!this.loggedUser){
@@ -43,7 +46,8 @@ export class LoginComponent implements OnInit {
   login() {
     this.userService.loginUser(this.username, this.password).subscribe(
       resp => {
-        this.loggedUser = resp;
+        this.loggedUser = resp.body;
+        this.statusCode = resp.status;
         // this.logIn.emit(null);
         window.location.href = 'home';
         //this.router.navigate(['home']);
