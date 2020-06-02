@@ -1,13 +1,13 @@
-import { Snack } from './snack';
+// import { Snack } from './snack';
 
-export class VendingMachine {
+// export class VendingMachine {
 
-    id: number;
-    name: string;
-    description: string;
-    theme: string;
-    mainColor: string;
-    secondaryColor: string;
-    snacks: Snack[];
+//     id: number;
+//     name: string;
+//     description: string;
+//     theme: string;
+//     mainColor: string;
+//     secondaryColor: string;
+//     snacks: Snack[];
 
-}
+// }

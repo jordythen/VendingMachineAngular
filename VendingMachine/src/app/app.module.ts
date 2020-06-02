@@ -17,6 +17,7 @@ import { UserService } from './user.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowseComponent } from './browse/browse.component';
+import { MyVendingmachineComponent } from './my-vendingmachine/my-vendingmachine.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BrowseComponent } from './browse/browse.component';
     VendingmachineComponent,
     AccountComponent,
     RegisterComponent,
-    BrowseComponent
+    BrowseComponent,
+    MyVendingmachineComponent
   ],
   imports: [
     FormsModule,

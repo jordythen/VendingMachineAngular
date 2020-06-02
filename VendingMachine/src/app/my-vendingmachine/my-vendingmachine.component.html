@@ -1,0 +1,31 @@
+
+	<div class="grid-form img-rounded">
+		<div class="grid-field-title grid-field img-rounded"><label> ACCOUNT INFORMATION </label> </div>
+		<div class="grid-field" style="margin-top:30px"> 
+			<label for="vendingMachingName">Vending Machine Name:&nbsp;</label>
+            <span  id="vendingMachingName" name="vendingMachingName" *ngIf="loggedUser"></span><br><br>
+			</div>
+		<div class="grid-field">
+			<label for="description">Description:&nbsp; </label>
+			<span id="description" name="description"  *ngIf="loggedUser" ></span><br><br>
+		</div>
+		<div class="grid-field">
+			<label for="theme">Theme:&nbsp; </label>
+			<span id="theme" name="theme" *ngIf="theme" ></span><br><br>
+		</div>
+		<div class="grid-field">
+			<label for="mainColor">Main Color:&nbsp;</label>
+			<span  id="mainColor" name="mainColor" *ngIf="loggedUser" ></span><br><br>
+		</div>
+		
+		<div class="grid-field">
+			<label for="secondaryColor">Secondary Color:&nbsp;$ </label>
+			<span id="secondaryColor" name="secondaryColor" *ngIf="loggedUser" ></span><br><br>
+        </div>
+        
+        <div class="grid-field">
+			<label for="snacks">Snacks:&nbsp;</label>
+			<span id="snacks" name="snacks" *ngIf="loggedUser" ></span><br><br>
+		</div>
+
+	</div>

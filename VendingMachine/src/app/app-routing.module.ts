@@ -6,6 +6,7 @@ import { VendingmachineComponent } from './vendingmachine/vendingmachine.compone
 import { AccountComponent } from './account/account.component';
 import { RegisterComponent } from './register/register.component';
 import { BrowseComponent } from './browse/browse.component';
+import { MyVendingmachineComponent } from './my-vendingmachine/my-vendingmachine.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'browse',
     component: BrowseComponent
+  },
+  {
+    path: 'myvendingmachine',
+    component: MyVendingmachineComponent
   }
 
 ];

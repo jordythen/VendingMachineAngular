@@ -3,25 +3,25 @@
 	<div class="grid-form img-rounded">
 		<div class="grid-field-title grid-field img-rounded"><label> ACCOUNT INFORMATION </label> </div>
 		<div class="grid-field" style="margin-top:30px"> 
-			<label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" value={{firstName}} readonly><br><br>
+			<label for="firstName">First Name:&nbsp; </label>
+            <span  id="firstName" name="firstName" *ngIf="loggedUser"  readonly>{{loggedUser.firstName}}</span><br><br>
 			</div>
 		<div class="grid-field">
-			<label for="lastName">Last Name</label>
-			<input type="text" id="lastName" name="lastName" value={{lastName}} readonly><br><br>
+			<label for="lastName">Last Name:&nbsp; </label>
+			<span id="lastName" name="lastName"  *ngIf="loggedUser" readonly>{{loggedUser.lastName}}</span><br><br>
 		</div>
 		<div class="grid-field">
-			<label for="username">Username</label>
-			<input type="text" id="username" name="username" value={{username}} readonly><br><br>
+			<label for="username">Username:&nbsp; </label>
+			<span id="username" name="username" *ngIf="loggedUser" readonly>{{loggedUser.username}}</span><br><br>
 		</div>
 		<div class="grid-field">
-			<label for="email">Email </label>
-			<input type="text" id="email" name="email" value={{email}} readonly><br><br>
+			<label for="email">Email:&nbsp;</label>
+			<span  id="email" name="email" *ngIf="loggedUser" readonly>{{loggedUser.email}}</span><br><br>
 		</div>
 		
 		<div class="grid-field">
-			<label for="money">Balance </label>
-			<input type="number" id="money" name="money" value={{money}} readonly><br><br>
+			<span class="glyphicon glyphicon-bitcoin"></span><label for="money">Balance:&nbsp;$ </label>
+			<span id="money" name="money" *ngIf="loggedUser" readonly>{{loggedUser.balance}}</span><br><br>
 		</div>
 
 	</div>

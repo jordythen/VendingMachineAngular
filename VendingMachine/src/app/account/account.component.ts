@@ -16,15 +16,19 @@ export class AccountComponent implements OnInit {
   password: string;
   email: string;
   money: number;
+  statusCode: number
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.firstName = this.loggedUser.firstName;
-    this.lastName = this.loggedUser.lastName;
-    this.username = this.loggedUser.username;
-    this.password = this.loggedUser.password;
-    this.email = this.loggedUser.email;
-    this.money = this.loggedUser.balance;
+    this.userService.loginUser(null, null).subscribe(
+      resp => {
+        console.log(resp);
+        console.log(resp.body);
+        console.log(resp.status);
+        this.loggedUser = resp.body;
+        this.statusCode = resp.status;
+      }
+    );
   }
 }
