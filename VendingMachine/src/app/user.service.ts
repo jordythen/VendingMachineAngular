@@ -16,6 +16,18 @@ export class UserService {
 
   constructor(private http: HttpClient, private urlService: UrlService) { }
 
+  createAccount(firstName: string,
+                lastName: string,
+                username: string,
+                password: string,
+                email: string,
+                balance: number): Observable<User>{
+                  return this.http.post(this.urlService.getUrl() + 'login/register',
+                  {firstName, lastName, username, email, password, balance})
+                  .pipe( map(this.getRespToUser) );
+                }
+
+
   loginUser(username: string, password: string): Observable<User> {
     if (username && password){ // if function was called with username and password
       const body = `user=${username}&pass=${password}`;
@@ -36,7 +48,7 @@ export class UserService {
   getLoggedUser(): User{
     return this.loggedPerson;
   }
-
+  // takes a json response and parse it into a User ts class object
   getRespToUser(resp): User {
     const user = resp as User;
     if (user) {

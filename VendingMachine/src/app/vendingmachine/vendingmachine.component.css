@@ -1,0 +1,65 @@
+figcaption {
+    font-size: smaller;
+    font-family: 'Microsoft YaHei';
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    ;
+    display: flex;
+    align-items: center;
+    white-space: pre;
+    place-content: center;
+    opacity: 0;
+    word-wrap: break-word;
+    transition: all 0.5s ease;
+}
+
+.caption {
+    position: relative;
+    display: inline-block;
+    padding: 24px;
+}
+
+/*THESE are important for setting the background of figcaption text*/
+
+.caption:hover .caption-text {
+    background: rgba(68, 81, 102, 0.6);
+    opacity: 1;
+}
+
+figcaption {
+    font-family: 'Play', sans-serif;
+    font-size: large;
+}
+
+.containerGrid {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.mycontainer {
+    display: grid;
+    row-gap: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 0.95fr));
+    margin-top: 50px;
+    justify-content: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.img-rounded {
+    border-radius: 10px;
+}
+
+.vm-cell{
+    justify-self: center;
+}
+
+img {
+    max-width: 345px;
+    height: auto;
+}
