@@ -48,9 +48,12 @@ export class LoginComponent implements OnInit {
       resp => {
         this.loggedUser = resp.body;
         this.statusCode = resp.status;
-        // this.logIn.emit(null);
-        window.location.href = 'home';
-        //this.router.navigate(['home']);
+        if(this.statusCode !== 200){
+          alert(' WRONG USERNAME/PASSWORD ');
+        }else{ // its good to go
+
+          window.location.href = 'home';
+        }
       }
     );
   }
