@@ -12,4 +12,6 @@ export class BrowseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  doSearch(){}
+
 }
