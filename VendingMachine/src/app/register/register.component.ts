@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
   createAccount(){
     this.userService.createAccount(this.firstName, this.lastName, this.username, this.password, this.email, this.balance).subscribe(
       resp => {
-        this.loggedUser = resp;
+        this.loggedUser = resp.body;
         if (resp){
           window.location.href = 'home';
         }
