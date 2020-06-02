@@ -17,6 +17,8 @@ import { UserService } from './user.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowseComponent } from './browse/browse.component';
+import { MakeofferComponent } from './makeoffer/makeoffer.component';
+import { ViewofferComponent } from './viewoffer/viewoffer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { BrowseComponent } from './browse/browse.component';
     VendingmachineComponent,
     AccountComponent,
     RegisterComponent,
-    BrowseComponent
+    BrowseComponent,
+    MakeofferComponent,
+    ViewofferComponent
   ],
   imports: [
     FormsModule,
