@@ -18,6 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowseComponent } from './browse/browse.component';
 import { MyVendingmachineComponent } from './my-vendingmachine/my-vendingmachine.component';
+import { MakeofferComponent } from './makeoffer/makeoffer.component';
+import { ViewofferComponent } from './viewoffer/viewoffer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { MyVendingmachineComponent } from './my-vendingmachine/my-vendingmachine
     AccountComponent,
     RegisterComponent,
     BrowseComponent,
-    MyVendingmachineComponent
+    MyVendingmachineComponent,
+    MakeofferComponent,
+    ViewofferComponent
   ],
   imports: [
     FormsModule,
