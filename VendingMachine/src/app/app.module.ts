@@ -16,9 +16,9 @@ import { UrlService } from './url.service';
 import { UserService } from './user.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowseComponent } from './browse/browse.component';
 import { MakeofferComponent } from './makeoffer/makeoffer.component';
 import { ViewofferComponent } from './viewoffer/viewoffer.component';
+import { IndividualVMComponent } from './individual-vm/individual-vm.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +28,9 @@ import { ViewofferComponent } from './viewoffer/viewoffer.component';
     VendingmachineComponent,
     AccountComponent,
     RegisterComponent,
-    BrowseComponent,
     MakeofferComponent,
-    ViewofferComponent
+    ViewofferComponent,
+    IndividualVMComponent
   ],
   imports: [
     FormsModule,

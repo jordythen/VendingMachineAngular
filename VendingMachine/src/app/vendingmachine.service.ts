@@ -37,13 +37,12 @@ export class VendingmachineService {
   }
 
 // -------- work-in-progress on actual functions -------------------------
-  /*
+
   getAll(): Observable<VendingMachine[]>{
-    return this.http.get(this.urlService.getUrl+'vendingmachine',{withCredentials: true}).pipe(
-      map(resp=>resp as VendingMachine[])
-    )
+    return this.http.get(this.urlService.getUrl() + 'vendingMachine', {withCredentials: true}).pipe(
+      map(resp => resp as VendingMachine[])
+    );
   }
-  */
 
 
 

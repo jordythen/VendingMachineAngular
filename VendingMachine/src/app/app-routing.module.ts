@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { VendingmachineComponent } from './vendingmachine/vendingmachine.component';
 import { AccountComponent } from './account/account.component';
 import { RegisterComponent } from './register/register.component';
-import { BrowseComponent } from './browse/browse.component';
+import { IndividualVMComponent } from './individual-vm/individual-vm.component';
 
 const routes: Routes = [
   {
@@ -33,8 +33,8 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'browse',
-    component: BrowseComponent
+    path: 'individualVM',
+    component: IndividualVMComponent
   }
 
 ];
