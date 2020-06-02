@@ -1,4 +1,62 @@
+<<<<<<< HEAD
 <div class="mycontainer" id="displayVendingMachines">
+=======
+<form>
+	<div class="grid-form2 img-rounded">
+        <div class="grid-field"> 
+            <label for="searchType">Search Type </label>
+            <select id="sType" name="searchType" [(ngModel)]="optionValue">
+                <option value="vmName" selected>Vending Machine Name</option>
+                <option value="vmId">Vending Machine ID</option>
+                <option value="snackType">Snack Type</option>
+                <option value="popHigh">Popularity (Highest)</option>
+                <option value="popLow">Popularity (Lowest)</option>
+            </select>
+        </div>
+
+        <ng-container *ngIf="optionValue == 'vmName' || optionValue == 'vmId'">
+            <div class="grid-field"> 
+                <input id="sText" maxlength="30" class="form-control" name="searchText" 
+                    type="text" placeholder=" " required>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="optionValue == 'snackType'">
+            <div class="grid-field"> 
+                <label for="snackType">Snack Type </label>
+                <select id="snkType" name="snackType">
+                    <option value=1 selected>DRIED_FRUIT</option>
+                    <option value=2>NUTS</option>
+                    <option value=3>CHIPS</option>
+                    <option value=4>CHOCOLATE</option>
+                    <option value=5>CHEESE</option>
+                    <option value=6>CRACKERS</option>
+                    <option value=7>TRAIL MIX</option>
+                    <option value=8>YOGURT</option>
+                    <option value=9>JERKY</option>
+                    <option value=10>CANDY</option>
+                    <option value=11>COOKIES</option>
+                    <option value=12>PRETZELS</option>
+                    <option value=13>FRUIT CANDY</option>
+                    <option value=14>PROTEIN BAR</option>
+                    <option value=15>CEREAL BAR</option>
+                    <option value=16>OTHER</option>
+                </select>
+            </div>
+        </ng-container>
+
+        <div class="grid-field"> 
+            <div id="btn-container">
+                <input type="submit" class="btn btn-primary btn-md" style="margin-top:3ex" 
+                    (click)="doSearch()" name="submit" value="Search" />
+            </div>
+        </div>
+        
+	</div>
+</form>
+
+<div class="mycontainer">
+>>>>>>> ce34850ea144be87bfa2b4f423420dda838f5d6c
     <div class="vm-cell">
         <a href='#'>
             <figure class="caption">
