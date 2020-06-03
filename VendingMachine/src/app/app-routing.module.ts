@@ -33,7 +33,7 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'individualVM',
+    path: 'individualVM/:vmID',
     component: IndividualVMComponent
   }
 

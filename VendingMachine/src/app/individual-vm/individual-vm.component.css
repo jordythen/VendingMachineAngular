@@ -1,0 +1,60 @@
+.main-container {
+    display: grid;
+    justify-items: center;
+    margin-top: 50px
+}
+
+.vendingmachine {
+    display: grid;
+    grid-template-columns: 420px 150px;
+    height: 750px;
+    align-content: center;
+}
+
+.vm-content {
+    display: grid;
+    background-color: rgb(184, 206, 247);
+    height: 750px;
+    min-width: 420px;
+    border-top-left-radius: 45px;
+    padding-top: 17px;
+    justify-items: center;
+    grid-template-rows: auto 3.5fr 2fr;
+}
+
+.vm-interact {
+    background-color: rgb(39, 42, 48);
+    height: 750px;
+    border-top-right-radius: 45px;
+}
+
+.sTitle {
+    font-family: 'Play', sans-serif;
+    font-size: x-large;
+}
+
+.sDisplayBox {
+    background-color: white;
+    min-height: 500px;
+    min-width: 360px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    overflow-y: scroll;
+}
+
+.leftBottom{
+    
+    font-family: 'Play', sans-serif;
+    justify-self: start;
+    padding-top: 10px;
+    padding-left: 25px;
+
+}
+
+.vmDescSlot{
+    margin-top:8px;
+}
+.vmDesc{
+    overflow-y: auto;
+}

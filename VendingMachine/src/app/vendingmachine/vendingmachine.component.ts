@@ -19,122 +19,108 @@ export class VendingmachineComponent implements OnInit {
   ngOnInit(): void {
     this.vendService.getAll().subscribe(
       resp => {
+        this.allVendingMachine = resp;
         console.log(resp);
-        for (let vm of resp){
-          document.getElementById('displayVMSection').innerHTML += `<div class="vm-cell">
-                <a href='individualVM'>
-                    <figure class="caption">
-                        <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
-                        <figcaption class="caption-text img-rounded">
-                            <div>
-                                <div>${vm.name}</div>
-                                <div>Theme: ${vm.theme}</div>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>`;
-        }
       }
     );
-    this.vendService.getByName(null).subscribe(
-      resp => {
-        console.log(resp);
-        for (let vm of resp){
-          document.getElementById('displayVMSection').innerHTML += `<div class="vm-cell">
-                <a href='individualVM'>
-                    <figure class="caption">
-                        <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
-                        <figcaption class="caption-text img-rounded">
-                            <div>
-                                <div>${vm.name}</div>
-                                <div>Theme: ${vm.theme}</div>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>`;
-        }
-      }
-    );
-    this.vendService.getById(null).subscribe(
-      resp => {
-        console.log(resp);
-        document.getElementById('displayVMSection').innerHTML += `<div class="vm-cell">
-            <a href='individualVM'>
-                <figure class="caption">
-                    <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
-                    <figcaption class="caption-text img-rounded">
-                        <div>
-                            <div>${resp.name}</div>
-                            <div>Theme: ${resp.theme}</div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </a>
-        </div>`;
-      }
-    );
-    this.vendService.getByType(null).subscribe(
-      resp => {
-        console.log(resp);
-        for (let vm of resp){
-          document.getElementById('displayVMSection').innerHTML += `<div class="vm-cell">
-                <a href='individualVM'>
-                    <figure class="caption">
-                        <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
-                        <figcaption class="caption-text img-rounded">
-                            <div>
-                                <div>${vm.name}</div>
-                                <div>Theme: ${vm.theme}</div>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>`;
-        }
-      }
-    );
-    this.vendService.getByPopularityHighest().subscribe(
-      resp => {
-        console.log(resp);
-        for (let vm of resp){
-          document.getElementById('displayVMSection').innerHTML += `<div class="vm-cell">
-                <a href='individualVM'>
-                    <figure class="caption">
-                        <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
-                        <figcaption class="caption-text img-rounded">
-                            <div>
-                                <div>${vm.name}</div>
-                                <div>Theme: ${vm.theme}</div>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>`;
-        }
-      }
-    );
-    this.vendService.getByPopularityLowest().subscribe(
-      resp => {
-        console.log(resp);
-        for (let vm of resp){
-          document.getElementById('displayVMSection').innerHTML += `<div class="vm-cell">
-                <a href='individualVM'>
-                    <figure class="caption">
-                        <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
-                        <figcaption class="caption-text img-rounded">
-                            <div>
-                                <div>${vm.name}</div>
-                                <div>Theme: ${vm.theme}</div>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>`;
-        }
-      }
-    );
+    // this.vendService.getByName(null).subscribe(
+    //   resp => {
+    //     console.log(resp);
+    //     for (let vm of resp){
+    //       document.getElementById('displayVMSection').innerHTML += `<div class="vm-cell">
+    //             <a href='individualVM'>
+    //                 <figure class="caption">
+    //                     <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
+    //                     <figcaption class="caption-text img-rounded">
+    //                         <div>
+    //                             <div>${vm.name}</div>
+    //                             <div>Theme: ${vm.theme}</div>
+    //                         </div>
+    //                     </figcaption>
+    //                 </figure>
+    //             </a>
+    //         </div>`;
+    //     }
+    //   }
+    // );
+    // this.vendService.getById(null).subscribe(
+    //   resp => {
+    //     console.log(resp.body);
+    //     document.getElementById('displayVMSection').innerHTML += `<div class="vm-cell">
+    //         <a href='individualVM'>
+    //             <figure class="caption">
+    //                 <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
+    //                 <figcaption class="caption-text img-rounded">
+    //                     <div>
+    //                         <div>${resp.body.name}</div>
+    //                         <div>Theme: ${resp.body.theme}</div>
+    //                     </div>
+    //                 </figcaption>
+    //             </figure>
+    //         </a>
+    //     </div>`;
+    //   }
+    // );
+    // this.vendService.getByType(null).subscribe(
+    //   resp => {
+    //     console.log(resp);
+    //     for (let vm of resp){
+    //       document.getElementById('displayVMSection').innerHTML += `<div class="vm-cell">
+    //             <a href='individualVM'>
+    //                 <figure class="caption">
+    //                     <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
+    //                     <figcaption class="caption-text img-rounded">
+    //                         <div>
+    //                             <div>${vm.name}</div>
+    //                             <div>Theme: ${vm.theme}</div>
+    //                         </div>
+    //                     </figcaption>
+    //                 </figure>
+    //             </a>
+    //         </div>`;
+    //     }
+    //   }
+    // );
+    // this.vendService.getByPopularityHighest().subscribe(
+    //   resp => {
+    //     console.log(resp);
+    //     for (let vm of resp){
+    //       document.getElementById('displayVMSection').innerHTML += `<div class="vm-cell">
+    //             <a href='individualVM'>
+    //                 <figure class="caption">
+    //                     <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
+    //                     <figcaption class="caption-text img-rounded">
+    //                         <div>
+    //                             <div>${vm.name}</div>
+    //                             <div>Theme: ${vm.theme}</div>
+    //                         </div>
+    //                     </figcaption>
+    //                 </figure>
+    //             </a>
+    //         </div>`;
+    //     }
+    //   }
+    // );
+    // this.vendService.getByPopularityLowest().subscribe(
+    //   resp => {
+    //     console.log(resp);
+    //     for (let vm of resp){
+    //       document.getElementById('displayVMSection').innerHTML += `<div class="vm-cell">
+    //             <a href='individualVM'>
+    //                 <figure class="caption">
+    //                     <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
+    //                     <figcaption class="caption-text img-rounded">
+    //                         <div>
+    //                             <div>${vm.name}</div>
+    //                             <div>Theme: ${vm.theme}</div>
+    //                         </div>
+    //                     </figcaption>
+    //                 </figure>
+    //             </a>
+    //         </div>`;
+    //     }
+    //   }
+    // );
   }
 
   doSearch(){
@@ -148,7 +134,7 @@ export class VendingmachineComponent implements OnInit {
 
     } else if (searchTypeVal === 'vmId') {
       const tbox = document.getElementById('sText') as HTMLInputElement;
-      const searchStr = tbox.value;
+      const searchStr = tbox.value as unknown as number;
       this.vendService.getById(searchStr);
 
     } else if (searchTypeVal === 'snackType') {
