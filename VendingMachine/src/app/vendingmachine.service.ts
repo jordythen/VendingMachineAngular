@@ -12,38 +12,40 @@ export class VendingmachineService {
 
   constructor(private http: HttpClient, private urlService: UrlService) { }
 
-  // -------- temporary test functions -------------------------
-  // making sure the serch button gets here correctly
-  urlStr = 'http://localhost:8080/VendingMachine/';
-
-  getByName(name: string) {
-    alert(this.urlStr + 'name/' + name);
-  }
-
-  getById(id: string) {
-    alert(this.urlStr + 'id/' + id);
-  }
-
-  getByPopularityHighest() {
-    alert(this.urlStr + 'popularity/highest');
-  }
-
-  getByPopularityLowest() {
-    alert(this.urlStr + 'popularity/lowest');
-  }
-
-  getByType(type: string) {
-    alert(this.urlStr + 'type/' + type);
-  }
-
-// -------- work-in-progress on actual functions -------------------------
-
   getAll(): Observable<VendingMachine[]>{
     return this.http.get(this.urlService.getUrl() + 'vendingMachine', {withCredentials: true}).pipe(
       map(resp => resp as VendingMachine[])
     );
   }
 
+  getByName(name: string): Observable<VendingMachine[]>{
+    return this.http.get(this.urlService.getUrl() + 'vendingMachine/name/' + name, {withCredentials: true}).pipe(
+      map(resp => resp as VendingMachine[])
+    );
+  }
 
+  getById(id: string): Observable<VendingMachine>{
+    return this.http.get(this.urlService.getUrl() + 'vendingMachine/id/' + id, {withCredentials: true}).pipe(
+      map(resp => resp as VendingMachine)
+    );
+  }
+
+  getByType(type: string): Observable<VendingMachine[]>{
+    return this.http.get(this.urlService.getUrl() + 'vendingMachine/type/' + type, {withCredentials: true}).pipe(
+      map(resp => resp as VendingMachine[])
+    );
+  }
+
+  getByPopularityHighest(): Observable<VendingMachine[]>{
+    return this.http.get(this.urlService.getUrl() + 'vendingMachine/popularity/highest', {withCredentials: true}).pipe(
+      map(resp => resp as VendingMachine[])
+    );
+  }
+
+  getByPopularityLowest(): Observable<VendingMachine[]>{
+    return this.http.get(this.urlService.getUrl() + 'vendingMachine/popularity/lowest', {withCredentials: true}).pipe(
+      map(resp => resp as VendingMachine[])
+    );
+  }
 
 }
