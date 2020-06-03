@@ -27,7 +27,7 @@ export class MakeofferComponent implements OnInit {
         }
     );
 
-    this.userSnacks=this.loggedUser.vendingmachine.snacks;
+    this.userSnacks=this.loggedUser.vendingMachine.snacks;
   }
 
   makeOffer(event){

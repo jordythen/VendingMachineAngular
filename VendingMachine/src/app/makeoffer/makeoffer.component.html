@@ -1,6 +1,6 @@
 <ng-container *ngIf="snackOfInterest">
     <div>
-        <h1>Choose one of your snacks to trade for: {{snackOfInterest.name}}</h1>
+        <h1>Choose one of your snacks to trade for: {{snackOfInterest.snackName}}</h1>
         <!--Implement if we can make offer for multiple snacks
         <ol>
             <li *ngFor="let s of userSnacks ">
@@ -14,7 +14,7 @@
     </div>
     <ol>
         <li *ngFor="let s of userSnacks ">
-            <span>{{s.name}}</span>
+            <span>{{s.snackName}}</span>
             <span>
                 <button id={{s.id}} type="button" (click)="makeOffer($event)">Make Offer</button>
             </span>

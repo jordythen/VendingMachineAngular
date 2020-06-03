@@ -8,6 +8,7 @@ import { faShoppingCart, faStar } from '@fortawesome/free-solid-svg-icons';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Snack } from '../classes/snack';
 import { SnackType } from '../classes/snacktype';
+import { SnackService } from '../snack.service';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -33,7 +34,7 @@ import { SnackType } from '../classes/snacktype';
 
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" >Purchase</button>
+      <button type="button" class="btn btn-outline-dark" (click)="purchase(snack)">Purchase</button>
       <button type="button" class="btn btn-outline-dark" >Make Offer</button>
       <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
     </div>
@@ -44,7 +45,14 @@ export class NgbdModalContent {
   @Input() snack: Snack;
   @Input() snackTypes: string;
 
-  constructor(public activeModal: NgbActiveModal) {}
+  constructor(public activeModal: NgbActiveModal, private snackService: SnackService) {}
+
+  purchase(snack: Snack){
+    alert(snack.id);
+
+    this.snackService.buySnackWithMoney(snack);
+
+  }
 }
 
 
