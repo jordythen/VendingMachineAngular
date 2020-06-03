@@ -1,9 +1,9 @@
-<form>
+<form class="center">
 	<div class="grid-form img-rounded">
 		<div class="grid-field-title grid-field img-rounded"><label> VENDING MACHINE INFORMATION </label> </div>
 		<div class="grid-field" style="margin-top:30px"> 
 			<label for="vendingname">Vending Machine Name: &nbsp;</label>
-            <input type="text" id="vendingname" name="vendingname" [(ngModel)]='userVending.name' (ngModelChange)="userVending.name = $event"><br><br>
+            <input type="text" id="vendingname" name="vendingname" [(ngModel)]='userVending.name'><br><br>
 		</div>
 		<div class="grid-field">
 			<label for="descr">Description:&nbsp; </label>
@@ -25,7 +25,7 @@
         
         <div class="grid-field">
 			<label for="snacks">Snacks:&nbsp;</label>
-			<input type="text" id="snacks" name="snacks" [(ngModel)]='userVending.snacks' readonly><br><br>
+			<input type="text" id="snacks" name="snacks" [(ngModel)]='userVending.snacks[0].snackName' readonly><br><br>
 		</div>
 		<div class="grid-field grid-field-huge">
 			<input type="submit" id="vendingmachineUpdate-submit" class="btn btn-primary btn-md" name="submit" value="Update Vending" (click)="vendingUpdate()" />

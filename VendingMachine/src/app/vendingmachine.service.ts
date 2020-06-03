@@ -51,9 +51,10 @@ export class VendingmachineService {
     );
   }
 
-  update(vm: VendingMachine): Observable<VendingMachine>{
-    return this.http.put(this.urlService.getUrl() + 'vendingMachine/update', {headers: this.regHeaders, withCredentials: true}).pipe(
-      map(resp => resp as VendingMachine)
+  update(vm: VendingMachine): Observable<HttpResponse<VendingMachine>>{
+    // tslint:disable-next-line: max-line-length
+    return this.http.put(this.urlService.getUrl() + 'vendingMachine/update', vm , {headers: this.regHeaders, observe: 'response', withCredentials: true}).pipe(
+      map(resp => resp as HttpResponse<VendingMachine>)
     );
   }
 

@@ -53,7 +53,9 @@ export class NgbdModalContent {
     this.snackService.buySnackWithMoney(snack).subscribe(
       resp => {
         statusCode = resp.status;
-        alert(statusCode);
+        //alert(statusCode);
+        window.location.reload();
+
       }
     );
 

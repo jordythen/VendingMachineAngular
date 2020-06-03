@@ -33,7 +33,15 @@ export class MyVendingmachineComponent implements OnInit {
   vendingUpdate() {
     console.log("The button actually works");
     this.vendingService.update(this.userVending).subscribe(
-      
+      resp => {
+        console.log("WERE RECEIVING THIS BAK " + resp);
+        console.log(resp.body);
+        console.log(resp.status);
+        this.userVending = resp.body;
+        this.statusCode = resp.status;
+        console.log("HEY THIS IS UPDATED VENDING MACHINE " + this.userVending);
+        window.location.reload();
+      }
     );
     console.log("The update method ran");
   }
