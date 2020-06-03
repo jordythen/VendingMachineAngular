@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BrowseComponent } from './browse.component';
+import { IndividualVMComponent } from './individual-vm.component';
 
-describe('BrowseComponent', () => {
-  let component: BrowseComponent;
-  let fixture: ComponentFixture<BrowseComponent>;
+describe('IndividualVMComponent', () => {
+  let component: IndividualVMComponent;
+  let fixture: ComponentFixture<IndividualVMComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BrowseComponent ]
+      declarations: [ IndividualVMComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BrowseComponent);
+    fixture = TestBed.createComponent(IndividualVMComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -5,8 +5,12 @@ import { LoginComponent } from './login/login.component';
 import { VendingmachineComponent } from './vendingmachine/vendingmachine.component';
 import { AccountComponent } from './account/account.component';
 import { RegisterComponent } from './register/register.component';
+<<<<<<< HEAD
 import { BrowseComponent } from './browse/browse.component';
 import { MyVendingmachineComponent } from './my-vendingmachine/my-vendingmachine.component';
+=======
+import { IndividualVMComponent } from './individual-vm/individual-vm.component';
+>>>>>>> 53a9cc6bbbab7d9d9998cb09c3c3a15e06f038ed
 
 const routes: Routes = [
   {
@@ -34,12 +38,17 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
+<<<<<<< HEAD
     path: 'browse',
     component: BrowseComponent
   },
   {
     path: 'myvendingmachine',
     component: MyVendingmachineComponent
+=======
+    path: 'individualVM',
+    component: IndividualVMComponent
+>>>>>>> 53a9cc6bbbab7d9d9998cb09c3c3a15e06f038ed
   }
 
 ];
