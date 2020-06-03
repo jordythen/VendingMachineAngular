@@ -16,11 +16,8 @@ import { UrlService } from './url.service';
 import { UserService } from './user.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-<<<<<<< HEAD
-import { BrowseComponent } from './browse/browse.component';
+
 import { MyVendingmachineComponent } from './my-vendingmachine/my-vendingmachine.component';
-=======
->>>>>>> 53a9cc6bbbab7d9d9998cb09c3c3a15e06f038ed
 import { MakeofferComponent } from './makeoffer/makeoffer.component';
 import { ViewofferComponent } from './viewoffer/viewoffer.component';
 import { IndividualVMComponent } from './individual-vm/individual-vm.component';
@@ -33,11 +30,8 @@ import { IndividualVMComponent } from './individual-vm/individual-vm.component';
     VendingmachineComponent,
     AccountComponent,
     RegisterComponent,
-<<<<<<< HEAD
-    BrowseComponent,
+
     MyVendingmachineComponent,
-=======
->>>>>>> 53a9cc6bbbab7d9d9998cb09c3c3a15e06f038ed
     MakeofferComponent,
     ViewofferComponent,
     IndividualVMComponent
