@@ -13,7 +13,7 @@ export class User {
     email: string;
     password: string;
     balance: number;
-    vendingmachine: VendingMachine;
+    vendingMachine: VendingMachine;
     offers: Offer[];
     orders: Order[];
     reviews: Review[];

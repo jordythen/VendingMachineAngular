@@ -9,7 +9,6 @@ h1{
     font-family: 'Play', sans-serif;
     font-size: x-large;
     display: inline-block;
-    float: left;
     font-size: larger;
     
   }
@@ -82,4 +81,7 @@ h1{
   }
   .btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
   background-color: #ff7571 !important;
+  }
+  input{
+    width: 100%;
   }
