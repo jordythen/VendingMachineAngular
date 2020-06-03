@@ -7,7 +7,7 @@
             </div>
             <div class="sDisplayBox"> 
                 <div *ngFor="let snack of currVendingMachine.snacks">
-                    <div>{{snack.snackName}}</div>
+                    <div class="individualSnack" (click)="open(snack)">{{snack.snackName}}</div>
                 </div>
                 <div style="padding-bottom: 15px"> </div>
 
@@ -19,8 +19,8 @@
             </div>
         </div>
         <div class="vm-interact">
-            button
-            button
+            <div class="purchaseBtnSec">
+                <span class="button2">Give Rating <fa-icon [icon]="star"></fa-icon></span>
         </div>
     </div>
 

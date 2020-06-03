@@ -1,4 +1,4 @@
-<ng-container *ngif="!loggedUser; else loggedin">
+<ng-container *ngIf="!loggedUser; else loggedin">
     <!--send back to login-->
 </ng-container>
 <ng-template #loggedin>
@@ -21,10 +21,23 @@
                     <th>Time Offer Was Made</th>
                 <!-- Cancel Offer Button <th></th> --->
                 </tr>
-                <tr *ngfor="let s of myOffersMade">
+                <!--ng-container instead-->
+                <tr *ngFor="let s of myOffersMade">
                     <td>{{s.id}}</td>
-                    <td>{{s.snacksOfInterest}}</td>
-                    <td>{{s.snacksToOffer}}</td>
+                    <td>
+                        <ul >
+                            <li *ngFor="let t of s.snacksOfInterest">
+                                {{t.name}}
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul> 
+                            <li *ngFor="let t of s.snacksToOffer">
+                                {{t.name}}
+                            </li>
+                        </ul>
+                    </td>
                     <td>{{s.status}}</td>
                     <td>{{s.timeOfferWasMade}}</td>
                 <!--Cancel offer button
@@ -49,10 +62,22 @@
                 
                 </tr>
                 
-                <tr *ngfor="let s of offersForMySnacks">
+                <tr *ngFor="let s of offersForMySnacks">
                     <td>{{s.id}}</td>
-                    <td>{{s.snacksOfInterest}}</td>
-                    <td>{{s.snacksToOffer}}</td>
+                    <td>
+                        <ul >
+                            <li *ngFor="let t of s.snacksOfInterest">
+                                {{t.name}}
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul> 
+                            <li *ngFor="let t of s.snacksToOffer">
+                                {{t.name}}
+                            </li>
+                        </ul>
+                    </td>
                     <td>{{s.status}}</td>
                     <td>{{s.timeOfferWasMade}}</td>
                     <td><button id={{s.id}} type="button" (click)="acceptOffer($event)">Accept</button></td>

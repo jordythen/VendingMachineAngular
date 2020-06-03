@@ -33,6 +33,13 @@
     font-size: x-large;
 }
 
+.individualSnack{
+    cursor: pointer;
+}
+.individualSnack:hover{
+    color: blue;
+}
+
 .sDisplayBox {
     background-color: white;
     min-height: 500px;
@@ -40,21 +47,55 @@
     text-align: center;
     padding-top: 15px;
     padding-bottom: 15px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
-.leftBottom{
-    
+.leftBottom {
     font-family: 'Play', sans-serif;
     justify-self: start;
     padding-top: 10px;
     padding-left: 25px;
-
 }
 
-.vmDescSlot{
-    margin-top:8px;
+.vmDescSlot {
+    margin-top: 8px;
 }
-.vmDesc{
+
+.vmDesc {
     overflow-y: auto;
+}
+
+.purchaseBtnSec{
+    display:grid;
+    justify-items: center;
+}
+
+span {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    background: #F2385A;
+    top: 100px;
+    padding: 6px;
+    font-size: 12pt;
+    border-radius: 2px;
+    box-shadow: 0px 15px 0px 0px #f02046, 0px 0px 20px 0px #bbb;
+    transition: all 0.2s;
+    cursor: pointer;
+    text-align: center;
+}
+
+span:active {
+    top: 108px;
+    box-shadow: 0px 7px 0px 0px #f02046;
+}
+
+.button2 {
+    background-color: #3498DB;
+    box-shadow: 0px 10px 0px 0px #1d6d9d;
+}
+
+.button2:active {
+    box-shadow: 0px 7px 0px 0px #258cd1;
 }

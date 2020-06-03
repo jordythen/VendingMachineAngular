@@ -21,6 +21,7 @@ import { MyVendingmachineComponent } from './my-vendingmachine/my-vendingmachine
 import { MakeofferComponent } from './makeoffer/makeoffer.component';
 import { ViewofferComponent } from './viewoffer/viewoffer.component';
 import { IndividualVMComponent } from './individual-vm/individual-vm.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { IndividualVMComponent } from './individual-vm/individual-vm.component';
     MatListModule,
     MatMenuModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [UrlService, UserService],
   bootstrap: [AppComponent]

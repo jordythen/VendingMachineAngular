@@ -8,14 +8,16 @@ import { Offer } from './classes/offer';
   providedIn: 'root'
 })
 export class OfferService {
-  offers:Offer[];
+  
   constructor(private http: HttpClient, private urlService: UrlService) { }
 
   getOffersForMySnacks():Offer[]{
-    
+    let offers:Offer[]
      //offers: Offer[];
-    return this.offers;
+    return offers;
   }
+
+  add(o:Offer){}
 
   acceptOffer(offer:Offer){}
 
