@@ -3,6 +3,7 @@ import { VendingMachine } from '../classes/vendingmachine';
 import { ActivatedRoute } from '@angular/router';
 import { VendingmachineService } from '../vendingmachine.service';
 import { HttpEventType } from '@angular/common/http';
+import { faShoppingCart, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-individual-vm',
@@ -11,6 +12,8 @@ import { HttpEventType } from '@angular/common/http';
 })
 export class IndividualVMComponent implements OnInit, OnChanges {
 
+  shoppingCart = faShoppingCart;
+  shoppingBasket = faShoppingBasket;
   vmID: number;
   currVendingMachine: VendingMachine;
   statusCode: number;
