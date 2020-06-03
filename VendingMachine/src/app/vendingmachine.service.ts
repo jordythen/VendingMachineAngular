@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpHeaders, HttpClient, HttpResponse } from '@angular/common/http';
 import { UrlService } from './url.service';
 import { Observable } from 'rxjs';
 import { VendingMachine } from './classes/vendingmachine';
@@ -24,9 +24,9 @@ export class VendingmachineService {
     );
   }
 
-  getById(id: string): Observable<VendingMachine>{
-    return this.http.get(this.urlService.getUrl() + 'vendingMachine/id/' + id, {withCredentials: true}).pipe(
-      map(resp => resp as VendingMachine)
+  getById(id: number): Observable<HttpResponse<VendingMachine>>{
+    return this.http.get(this.urlService.getUrl() + 'vendingMachine/id/' + id, {observe: 'response', withCredentials: true}).pipe(
+      map(resp => resp as HttpResponse<VendingMachine>)
     );
   }
 

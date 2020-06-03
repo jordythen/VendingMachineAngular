@@ -51,7 +51,20 @@
         
 	</div>
 </form>
-
-<div class="mycontainer" id="displayVMSection">
-  
+<div class="mycontainer">
+<div id="displayVMSection" *ngFor="let vm of allVendingMachine">
+    <div class="vm-cell">
+        <a href="individualVM/{{vm.id}}">
+            <figure class="caption">
+                <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
+                <figcaption class="caption-text img-rounded">
+                    <div>
+                        <div>{{vm.name}}</div>
+                        <div>Theme: {{vm.theme}}</div>
+                    </div>
+                </figcaption>
+            </figure>
+        </a>
+    </div>
+  </div>
 </div>

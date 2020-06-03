@@ -40,7 +40,7 @@ const routes: Routes = [
     component: MyVendingmachineComponent
   },
   {
-    path: 'individualVM',
+    path: 'individualVM/:vmID',
     component: IndividualVMComponent
   }
 
