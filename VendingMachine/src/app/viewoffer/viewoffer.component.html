@@ -1,1 +1,66 @@
-<p>viewoffer works!</p>
+<ng-container *ngif="!loggedUser; else loggedin">
+    <!--send back to login-->
+</ng-container>
+<ng-template #loggedin>
+    <div id="InitialButtons" [style]="first">
+        <span>
+            <button type="button" (click)="myOffers()">Offers I Have Made</button>
+        </span>
+        <span>
+            <button type="button" (click)="offersForMyCandy()">Offers For My Candy</button>
+        </span>
+    </div>
+    <div id="SecondPhase" [style]="second">
+        <div id="ShowMyOffers" [style]="SMO">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Snacks of Interest</th>
+                    <th>Snacks Offered</th>
+                    <th>Status</th>
+                    <th>Time Offer Was Made</th>
+                <!-- Cancel Offer Button <th></th> --->
+                </tr>
+                <tr *ngfor="let s of myOffersMade">
+                    <td>{{s.id}}</td>
+                    <td>{{s.snacksOfInterest}}</td>
+                    <td>{{s.snacksToOffer}}</td>
+                    <td>{{s.status}}</td>
+                    <td>{{s.timeOfferWasMade}}</td>
+                <!--Cancel offer button
+                <td *ngif="s.status=='Sent'; else noButton">
+                    
+                </td>
+                <ng-template #noButton><td></td></ng-template>
+                -->
+                </tr>
+            </table>
+        </div>
+        <div id="OffersForMySnacks" [style]="OFMS">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Snacks of Interest</th>
+                    <th>Snacks Offered</th>
+                    <th>Status</th>
+                    <th>Time Offer Was Made</th>
+                    <th></th>
+                    <th></th>
+                
+                </tr>
+                
+                <tr *ngfor="let s of offersForMySnacks">
+                    <td>{{s.id}}</td>
+                    <td>{{s.snacksOfInterest}}</td>
+                    <td>{{s.snacksToOffer}}</td>
+                    <td>{{s.status}}</td>
+                    <td>{{s.timeOfferWasMade}}</td>
+                    <td><button id={{s.id}} type="button" (click)="acceptOffer($event)">Accept</button></td>
+                    <td><button id={{s.id}} type="button" (click)="rejectOffer($event)">Reject</button></td>
+                </tr>
+                
+            </table>
+        </div>
+        <button type="button" (click)="back()">Back</button>
+    </div>
+</ng-template>
