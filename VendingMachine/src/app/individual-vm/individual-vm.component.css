@@ -33,6 +33,13 @@
     font-size: x-large;
 }
 
+.individualSnack{
+    cursor: pointer;
+}
+.individualSnack:hover{
+    color: blue;
+}
+
 .sDisplayBox {
     background-color: white;
     min-height: 500px;

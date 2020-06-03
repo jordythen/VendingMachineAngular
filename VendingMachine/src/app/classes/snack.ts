@@ -4,9 +4,9 @@ export class Snack {
 
     id: number;
     isHidden: string;
-    name: string;
+    snackName: string;
     description: string;
-    quantity: number;
+    numInStock: number;
     cost: number;
     types: SnackType[];
     totalFat: number;
