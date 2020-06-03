@@ -3,7 +3,8 @@
         <div class="grid-field"> 
             <label for="searchType">Search Type </label>
             <select id="sType" name="searchType" [(ngModel)]="optionValue">
-                <option value="vmName" selected>Vending Machine Name</option>
+                <option value="vmAll" selected>All</option>
+                <option value="vmName" >Vending Machine Name</option>
                 <option value="vmId">Vending Machine ID</option>
                 <option value="snackType">Snack Type</option>
                 <option value="popHigh">Popularity (Highest)</option>
@@ -52,6 +53,13 @@
 	</div>
 </form>
 <div class="mycontainer">
+
+<ng-container *ngIf="matchFound == false">
+    <div if="no-match"> 
+        <p>Sorry, No matches were found!</p>
+    </div>
+</ng-container>
+
 <div id="displayVMSection" *ngFor="let vm of allVendingMachine">
     <div class="vm-cell">
         <a href="individualVM/{{vm.id}}">
