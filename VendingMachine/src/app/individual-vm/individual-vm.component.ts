@@ -48,9 +48,14 @@ export class NgbdModalContent {
   constructor(public activeModal: NgbActiveModal, private snackService: SnackService) {}
 
   purchase(snack: Snack){
-    alert(snack.id);
-
-    this.snackService.buySnackWithMoney(snack);
+    //alert(snack.id);
+    let statusCode: number;
+    this.snackService.buySnackWithMoney(snack).subscribe(
+      resp => {
+        statusCode = resp.status;
+        alert(statusCode);
+      }
+    );
 
   }
 }
