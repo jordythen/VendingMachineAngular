@@ -1,7 +1,7 @@
-import { VendingMachine } from './vendingmachine';
 import { Offer } from './offer';
 import { Order } from './order';
 import { Review } from './review';
+import { VendingMachine } from './vendingmachine';
 
 
 export class User {

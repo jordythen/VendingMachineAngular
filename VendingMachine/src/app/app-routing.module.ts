@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { VendingmachineComponent } from './vendingmachine/vendingmachine.component';
 import { AccountComponent } from './account/account.component';
 import { RegisterComponent } from './register/register.component';
+
+import { MyVendingmachineComponent } from './my-vendingmachine/my-vendingmachine.component';
 import { IndividualVMComponent } from './individual-vm/individual-vm.component';
 
 const routes: Routes = [
@@ -31,6 +33,11 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+
+  {
+    path: 'myvendingmachine',
+    component: MyVendingmachineComponent
   },
   {
     path: 'individualVM/:vmID',

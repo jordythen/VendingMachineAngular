@@ -10,6 +10,9 @@ import { map } from 'rxjs/operators';
 })
 export class VendingmachineService {
 
+  private encHeaders = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+  private regHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+
   constructor(private http: HttpClient, private urlService: UrlService) { }
 
   getAll(): Observable<VendingMachine[]>{
@@ -45,6 +48,12 @@ export class VendingmachineService {
   getByPopularityLowest(): Observable<VendingMachine[]>{
     return this.http.get(this.urlService.getUrl() + 'vendingMachine/popularity/lowest', {withCredentials: true}).pipe(
       map(resp => resp as VendingMachine[])
+    );
+  }
+
+  update(vm: VendingMachine): Observable<VendingMachine>{
+    return this.http.put(this.urlService.getUrl() + 'vendingMachine/update', {headers: this.regHeaders, withCredentials: true}).pipe(
+      map(resp => resp as VendingMachine)
     );
   }
 

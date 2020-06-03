@@ -16,6 +16,8 @@ import { UrlService } from './url.service';
 import { UserService } from './user.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
+import { MyVendingmachineComponent } from './my-vendingmachine/my-vendingmachine.component';
 import { MakeofferComponent } from './makeoffer/makeoffer.component';
 import { ViewofferComponent } from './viewoffer/viewoffer.component';
 import { IndividualVMComponent } from './individual-vm/individual-vm.component';
@@ -29,6 +31,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     VendingmachineComponent,
     AccountComponent,
     RegisterComponent,
+
+    MyVendingmachineComponent,
     MakeofferComponent,
     ViewofferComponent,
     IndividualVMComponent
