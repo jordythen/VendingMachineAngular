@@ -80,8 +80,8 @@
                     </td>
                     <td>{{s.status}}</td>
                     <td>{{s.timeOfferWasMade}}</td>
-                    <td><button id={{s.id}} type="button" (click)="acceptOffer($event)">Accept</button></td>
-                    <td><button id={{s.id}} type="button" (click)="rejectOffer($event)">Reject</button></td>
+                    <td><button id={{s.id}} type="button" (click)="acceptOffer(s)">Accept</button></td>
+                    <td><button id={{s.id}} type="button" (click)="rejectOffer(s)">Reject</button></td>
                 </tr>
                 
             </table>

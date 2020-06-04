@@ -32,10 +32,12 @@ export class ViewofferComponent implements OnInit {
         }
     );
 
-    if (!this.loggedUser){
+    if (this.loggedUser){
 
       this.myOffersMade = this.loggedUser.offers;
-      this.offersForMySnacks = this.offerService.getOffersForMySnacks();
+      this.offerService.getOtherUsersOffersForMySnacks().subscribe(
+          resp=>this.offersForMySnacks=resp
+      );
     }else{
       alert('You are not logged in.');
       // more needed here, redirect to login page
@@ -53,31 +55,32 @@ export class ViewofferComponent implements OnInit {
     this.second ='display:block';
     this.OFMS ='display:block';
   }
-  acceptOffer(event){
-    let id: number;
-    id = event.target.attributes.id;
-    let offer: Offer;
-    for (const o of this.offersForMySnacks ){
-      if (id = o.id){
-        offer = o;
-      }
-    }
+  acceptOffer(offer:Offer){
+    // let id: number;
+    // id = event.target.attributes.id;
+    // let offer: Offer;
+    // for (const o of this.offersForMySnacks ){
+    //   if (id = o.id){
+    //     offer = o;
+    //   }
+    // }
 
     this.offerService.acceptOffer(offer);
     alert('Offer accepted');
     window.location.reload();
 
   }
-  rejectOffer(event){
-    let id: number;
-    id = event.target.attributes.id;
-    let offer: Offer;
-    for (const o of this.offersForMySnacks ){
-      if (id = o.id){
-        offer = o;
-      }
-    }
-    this.offerService.rejectOffer(offer);
+  rejectOffer(offer:Offer){
+    // let id: number;
+    // id = event.target.attributes.id;
+    // let offer: Offer;
+    // for (const o of this.offersForMySnacks ){
+    //   if (id = o.id){
+    //     offer = o;
+    //   }
+    // }
+    offer.status='Rejected';
+    this.offerService.update(offer);
     alert('Offer rejected');
     window.location.reload();
   }
