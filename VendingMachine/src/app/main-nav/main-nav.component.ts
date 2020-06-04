@@ -67,12 +67,10 @@ export class MainNavComponent implements OnInit, OnChanges {
   logout(){
     this.userService.logoutUser().subscribe(
       resp => {
-        this.router.navigate(['home']);
         this.loggedUser = null;
-        
+        window.location.href = 'home';
       }
     );
-    window.location.reload();
   }
 
   someMethod() {

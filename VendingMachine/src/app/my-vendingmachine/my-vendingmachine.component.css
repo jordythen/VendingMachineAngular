@@ -4,7 +4,7 @@ h1 {
   text-align: center;
 }
 
-.center{
+.center {
   display: grid;
 }
 
@@ -14,9 +14,34 @@ form {
   display: inline-block;
   font-size: larger;
 }
-
-.snacksBloc{
-  
+.snacksContainer{
+  display: grid;
+  grid-template-rows: auto 20px;
+}
+.snacksBloc {
+ 
+  display: grid;
+  justify-items: center;
+  grid-gap: 4px;
+}
+.snacks{
+  color: black;
+  background-color: rgb(198, 222, 255);
+  width: 80%;
+  text-align: center;
+}
+.addremove{
+  justify-self: end;
+  margin-right: 10px;
+  font-size: xx-large;
+}
+.plus{
+  cursor: pointer;
+  color: blue;
+}
+.minus{
+  cursor: pointer;
+  color: red;
 }
 
 /*#payment {
@@ -90,4 +115,54 @@ button {
 
 input {
   width: 100%;
+}
+
+.addSnackFont {
+  font-family: 'Play', sans-serif;
+  font-size: medium;
+}
+
+
+.viewOverlay {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-items: stretch;
+  padding-bottom: 4ex;
+  align-items: start;
+}
+
+.background-overlay {
+  background-color: #4d4d4d;
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 auto;
+
+}
+
+.addSnackContainer {	
+  margin-top: 100px;	
+  padding: 20px;
+  background: #fff;	
+  width: 70%;
+  text-align: center;	
+  color: black;	
+  border-radius: 25px;
+  background-color: #fdfdfd;	
+  z-index: 11;
+  justify-self: center;
+}
+.sTitle {
+    font-family: 'Play', sans-serif;
+    font-size: x-large;
+}
+.twoField{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-bottom: 20px;
 }
