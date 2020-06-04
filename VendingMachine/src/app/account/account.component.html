@@ -1,5 +1,5 @@
 
-
+<form class="center">
 	<div class="grid-form img-rounded">
 		<div class="grid-field-title grid-field img-rounded"><label> ACCOUNT INFORMATION </label> </div>
 		<div class="grid-field" style="margin-top:30px"> 
@@ -23,5 +23,16 @@
 			<label for="money">Balance:&nbsp;$ </label>
 			<span id="money" name="money" *ngIf="loggedUser" readonly>{{loggedUser.balance}}</span><br><br>
 		</div>
-
+		
+			<div class="grid-field">
+				<label for="addedMoney">How much would you like to add?&nbsp;$ </label>
+				<input id="addedMoney" class="form-control" name="addedMoney"
+					type="number" placeholder="000.00" step="0.01" min="0" max="999.99"
+					placeholder="Enter amount to add" [(ngModel)]='addedMoney'><br><br>
+			</div>
+			<div class="grid-field grid-field-huge">
+				<input type="button" id="user-update" class="btn btn-primary btn-md" name="userupdate" value="Add Money" (click)="cashUpdate()" />
+			</div>
+		
 	</div>
+</form>
