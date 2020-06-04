@@ -133,7 +133,7 @@ export class MyVendingmachineComponent implements OnInit, DoCheck {
     this.snackService.addSnackToVM(this.snackToBeAdded, this.userVending.id).subscribe(
       resp => {
         this.statusCode = resp.status;
-        alert(this.statusCode);
+        //alert(this.statusCode);
         console.log(resp.body);
         window.location.reload();
       }
