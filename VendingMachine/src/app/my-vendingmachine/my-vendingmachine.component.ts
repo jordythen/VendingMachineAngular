@@ -135,7 +135,7 @@ export class MyVendingmachineComponent implements OnInit, DoCheck {
         this.statusCode = resp.status;
         alert(this.statusCode);
         console.log(resp.body);
-        //window.location.reload();
+        window.location.reload();
       }
     );
 
