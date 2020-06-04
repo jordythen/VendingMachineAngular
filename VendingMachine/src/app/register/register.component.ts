@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
     this.username = '';
     this.password = '';
     this.email = '';
-    this.balance = 4000;
+    this.balance = 100;
   }
 
   createAccount(){
