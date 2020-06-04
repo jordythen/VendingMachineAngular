@@ -60,8 +60,8 @@
     </div>
 </ng-container>
 
-<div id="displayVMSection" *ngFor="let vm of allVendingMachine">
-    <div class="vm-cell">
+<ng-container id="displayVMSection" *ngFor="let vm of allVendingMachine">
+    <div class="vm-cell" *ngIf="vm.id != userVendingMachine.id">
         <a href="individualVM/{{vm.id}}">
             <figure class="caption">
                 <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
@@ -74,5 +74,6 @@
             </figure>
         </a>
     </div>
-  </div>
+</ng-container>
+>
 </div>

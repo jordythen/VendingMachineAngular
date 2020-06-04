@@ -24,6 +24,7 @@
           <mat-icon> fastfood</mat-icon>
         </div>
         <div class="topNavLinks">
+          <span *ngIf="!(isHandset$ | async) && loggedUser" class="noOutline balance">Balance: ${{loggedUser.balance}}</span>
           <a *ngIf="!(isHandset$ | async) && loggedUser" class="noOutline" mat-button routerLink="/vendingmachine"> Vending Machine </a>
           <a *ngIf="!(isHandset$ | async) && !loggedUser" class="noOutline" mat-button routerLink="/login"> Log
             In</a>

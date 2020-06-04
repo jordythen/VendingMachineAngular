@@ -6,7 +6,8 @@
 .body {
   background-color: rgb(218, 223, 255);
 }
-.mat-toolbar-row, .mat-toolbar-single-row{
+
+.mat-toolbar-row, .mat-toolbar-single-row {
   height: 43px !important;
 }
 
@@ -23,7 +24,22 @@
   border-left-width: 0px;
   border-top-width: 0px;
   border-style: solid;*/
-  box-shadow:  2px 1px 3px #8d8cbf;
+  box-shadow: 2px 1px 3px #8d8cbf;
+}
+
+.balance {
+  margin-right: 40px;
+  font-size: 14pt;
+  font-family: 'Play', sans-serif;
+  color: #41528e;
+  background-color: #f2f0ff;
+  padding: 0px 5px;
+  border-radius: 5px;
+  transform: translateY(0.8px);
+  display: inline-grid;
+  height: 26px;
+  align-self: center;
+  align-content: center;
 }
 
 .noOutline:focus {
@@ -84,11 +100,11 @@
   margin: 0 10px;
 }
 
-.mat-menu-panel{
-    margin-top: 40px !important;
-    background-color: #ffaaed;
+.mat-menu-panel {
+  margin-top: 40px !important;
+  background-color: #ffaaed;
 }
+
 button.mat-menu-item {
   color: white !important;
-
 }

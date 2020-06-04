@@ -1,7 +1,7 @@
 <div class="main-container">
 
     <div class="vendingmachine">
-        <div class="vm-content">
+        <div class="vm-content" [style.background-color]="currVendingMachine.mainColor">
             <div class="sTitle">
                 {{currVendingMachine.name}}
             </div>
@@ -18,7 +18,7 @@
                 
             </div>
         </div>
-        <div class="vm-interact">
+        <div class="vm-interact" [style.background-color]="currVendingMachine.secondaryColor">
             <div class="purchaseBtnSec">
                 <span class="button2">Give Rating <fa-icon [icon]="star"></fa-icon></span>
         </div>

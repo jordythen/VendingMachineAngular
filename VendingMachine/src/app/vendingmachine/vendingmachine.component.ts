@@ -3,6 +3,7 @@ import { splitTypescriptSuffix } from '@angular/compiler/src/aot/util';
 import { VendingmachineService } from '../vendingmachine.service';
 import { Router } from '@angular/router';
 import { VendingMachine } from '../classes/vendingmachine';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-vendingmachine',
@@ -11,13 +12,25 @@ import { VendingMachine } from '../classes/vendingmachine';
 })
 export class VendingmachineComponent implements OnInit {
   allVendingMachine: VendingMachine[];
+  userVendingMachine: VendingMachine;
   optionValue = 'vmAll';
   matchFound = true;
 
   constructor(private router: Router,
-              private vendService: VendingmachineService) { }
+              private vendService: VendingmachineService,
+              private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userService.loginUser(null, null).subscribe(
+      resp => {
+        console.log(resp);
+        console.log(resp.body);
+        console.log(resp.status);
+        this.userVendingMachine = resp.body.vendingMachine;
+      }
+    );
+
+
     this.vendService.getAll().subscribe(
       resp => {
         console.log(resp);
