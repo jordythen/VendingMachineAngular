@@ -65,5 +65,10 @@ export class UserService {
   //   }
   //   return user;
   // }
+  updateUser(user:User):Observable<User>{
+    return this.http.put(this.urlService.getUrl()+'login', user, {withCredentials: true}).pipe(
+      map(resp=> resp as User)
+    )
+  }
 }
 

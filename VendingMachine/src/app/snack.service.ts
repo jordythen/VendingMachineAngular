@@ -4,7 +4,7 @@ import { UrlService } from './url.service';
 import { Observable } from 'rxjs';
 import { Snack } from './classes/snack';
 import { map } from 'rxjs/operators';
-
+import { VendingMachine } from './classes/vendingmachine';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,6 +27,13 @@ export class SnackService {
   addSnack(snack:Snack): Observable<Snack>{
     return this.http.post(this.urlService.getUrl()+'snack', snack,{withCredentials: true}).pipe(
       map(resp=>resp as Snack)
+    )
+  }
+
+  //id is id of vending machine
+  addSnackToVM(snack:Snack, id:number):Observable<HttpResponse<VendingMachine>>{
+    return this.http.post(this.urlService.getUrl()+'snack/'+id, snack, {observe: 'response', withCredentials: true}).pipe(
+        map(resp=>resp as HttpResponse<VendingMachine>)
     )
   }
 
