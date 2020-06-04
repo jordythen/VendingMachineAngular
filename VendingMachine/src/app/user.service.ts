@@ -47,8 +47,13 @@ export class UserService {
     return this.http.delete(this.urlService.getUrl() + 'login', {withCredentials: true}).pipe();
   }
 
-  getLoggedUser(): User{
+  getLoggedUser(): Observable<User>{
     return this.loggedPerson;
+  }
+
+  update(userToUpdate: User)
+  {
+
   }
   // takes a json response and parse it into a User ts class object
   // getRespToUser(resp): User {
