@@ -13,7 +13,7 @@
 
 .vm-content {
     display: grid;
-    background-color: rgb(184, 206, 247);
+    background-color: rgb(127, 165, 236);
     height: 750px;
     min-width: 420px;
     border-top-left-radius: 45px;
@@ -23,7 +23,7 @@
 }
 
 .vm-interact {
-    background-color: rgb(39, 42, 48);
+    background-color: rgb(94, 98, 105);
     height: 750px;
     border-top-right-radius: 45px;
 }

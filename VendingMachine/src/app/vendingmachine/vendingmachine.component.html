@@ -64,7 +64,11 @@
     <div class="vm-cell" *ngIf="vm.id != userVendingMachine.id">
         <a href="individualVM/{{vm.id}}">
             <figure class="caption">
-                <img class="img-rounded" src="https://imgur.com/DTcVDP7.png" />
+                <div class="spacer"></div>
+                <div class="vmColor" [style.backgroundColor]="vm.mainColor">
+                    <div class="vmColor2" [style.backgroundColor]="vm.secondaryColor"></div>
+                </div>
+                <img class="img-rounded" src="https://imgur.com/ZOSAn51.png" />
                 <figcaption class="caption-text img-rounded">
                     <div>
                         <div>{{vm.name}}</div>
@@ -75,5 +79,5 @@
         </a>
     </div>
 </ng-container>
->
+
 </div>
