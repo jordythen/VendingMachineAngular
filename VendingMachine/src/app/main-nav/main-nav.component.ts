@@ -72,7 +72,7 @@ export class MainNavComponent implements OnInit, OnChanges {
         
       }
     );
-    window.location.reload;
+    window.location.reload();
   }
 
   someMethod() {
