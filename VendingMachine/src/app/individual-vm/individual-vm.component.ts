@@ -121,6 +121,26 @@ export class IndividualVMComponent implements OnInit {
 
   }
 
+  // --------------------------- TS For Ratings---------------------------------
+  viewRatings(): void {	
+    document.getElementById('ratingsOverlay').style.display = 'block';	
+    document.getElementById('viewRatingsContainer').style.display = 'block';	
+    document.getElementById('giveRatingContainer').style.display = 'none';	
+  }	
+  giveRating(): void {	
+    document.getElementById('ratingsOverlay').style.display = 'block';	
+    document.getElementById('giveRatingContainer').style.display = 'block';	
+    document.getElementById('viewRatingsContainer').style.display = 'none';	
+  }	
+  closeRatings(): void {	
+    document.getElementById('ratingsOverlay').style.display = 'none';	
+  }
+  submitRating(): void {	
+    // TODO, just closes for testing
+    document.getElementById('ratingsOverlay').style.display = 'none';	
+  }
+  // ----------------------------------------------------------------------
+
 }
 
 // for (const field in snackObj){

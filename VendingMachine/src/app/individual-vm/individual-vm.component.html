@@ -19,8 +19,99 @@
             </div>
         </div>
         <div class="vm-interact" [style.background-color]="currVendingMachine.secondaryColor">
-            <div class="purchaseBtnSec">
-                <span class="button2">Give Rating <fa-icon [icon]="star"></fa-icon></span>
+
+            <!-- ---------------------------- Code For Ratings --------------------------- -->
+            <div class="purchaseBtnSec">	
+                <span class="button2" (click)="viewRatings()">View Ratings <fa-icon [icon]="star"></fa-icon></span>	
+            </div>	
+            <div style="height: 20px;"></div>	
+            <div class="purchaseBtnSec">	
+                <span class="button2" (click)="giveRating()">Give Rating <fa-icon [icon]="star"></fa-icon></span>	
+            </div>	
+            <div id="ratingsOverlay" class="ratingsForm" style="display: none;">	
+                <div class="ratingsContainer" id="viewRatingsContainer">	
+                    <p class="sTitle">View Ratings</p>	
+                    <div class="reviewScroll">
+                        <div class="reviewBox">
+                            <div>Rating: 5</div>
+                            <div>Comments: Good Machine</div>
+                            <div>Reviewer: Joe Smith</div>
+                            <div>Review Time: 2020-06-03 09:43:14</div>
+                        </div>
+                        <div class="reviewBox">
+                            <div>Rating: 5</div>
+                            <div>Comments: Good Machine</div>
+                            <div>Reviewer: Joe Smith</div>
+                            <div>Review Time: 2020-06-03 09:43:14</div>
+                        </div>
+                        <div class="reviewBox">
+                            <div>Rating: 5</div>
+                            <div>Comments: Good Machine</div>
+                            <div>Reviewer: Joe Smith</div>
+                            <div>Review Time: 2020-06-03 09:43:14</div>
+                        </div>
+                        <div class="reviewBox">
+                            <div>Rating: 5</div>
+                            <div>Comments: Good Machine</div>
+                            <div>Reviewer: Joe Smith</div>
+                            <div>Review Time: 2020-06-03 09:43:14</div>
+                        </div>
+                        <div class="reviewBox">
+                            <div>Rating: 5</div>
+                            <div>Comments: Good Machine</div>
+                            <div>Reviewer: Joe Smith</div>
+                            <div>Review Time: 2020-06-03 09:43:14</div>
+                        </div>
+                    </div>	
+                    <button (click)="closeRatings()" class="ratingButton">Close</button>	
+                </div>	
+
+                <div class="ratingsContainer" id="giveRatingContainer">	
+                    <p class="sTitle">Give Rating</p>	
+                    <form>
+                        <div id="ratingSelectBox">
+                            <label>Select Rating</label><br>
+                            <div class="starsColored">
+                                <input type="radio" id="r5" name="ratingSelect" value="5" class="radioBtn">
+                                <fa-icon [icon]="star"></fa-icon>
+                                <fa-icon [icon]="star"></fa-icon>
+                                <fa-icon [icon]="star"></fa-icon>
+                                <fa-icon [icon]="star"></fa-icon>
+                                <fa-icon [icon]="star"></fa-icon>
+                            </div>
+                            <div class="starsColored">
+                                <input type="radio" id="r4" name="ratingSelect" value="4" class="radioBtn">
+                                <fa-icon [icon]="star"></fa-icon>
+                                <fa-icon [icon]="star"></fa-icon>
+                                <fa-icon [icon]="star"></fa-icon>
+                                <fa-icon [icon]="star"></fa-icon>
+                            </div>
+                            <div class="starsColored">
+                                <input type="radio" id="r3" name="ratingSelect" value="3" class="radioBtn">
+                                <fa-icon [icon]="star"></fa-icon>
+                                <fa-icon [icon]="star"></fa-icon>
+                                <fa-icon [icon]="star"></fa-icon>
+                            </div>
+                            <div class="starsColored">
+                                <input type="radio" id="r2" name="ratingSelect" value="2" class="radioBtn">
+                                <fa-icon [icon]="star"></fa-icon>
+                                <fa-icon [icon]="star"></fa-icon>
+                            </div>
+                            <div class="starsColored">
+                                <input type="radio" id="r1" name="ratingSelect" value="1" class="radioBtn">
+                                <fa-icon [icon]="star"></fa-icon>
+                            </div>
+                            
+                            <label for="commentText">Comments</label><br>
+                        </div>
+                        <textarea id="cmtText" rows="5" cols="30" name="commentText"></textarea>
+                    </form>
+                    <button (click)="closeRatings()" class="ratingButton">Cancel</button>
+                    <button (click)="submitRating()" class="ratingButton">Submit</button>
+                </div>	
+            </div>
+            <!-- ----------------------------- End of Ratings code ----------------------------------- -->
+
         </div>
     </div>
 
