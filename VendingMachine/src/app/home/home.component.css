@@ -1,0 +1,89 @@
+h1{
+  font-family: 'Play', sans-serif;
+  font-size: xx-large;
+  text-align: center
+  ;
+}
+
+form {
+  font-family: 'Play', sans-serif;
+  font-size: x-large;
+  display: inline-block;
+  font-size: larger;
+  
+}
+
+/*#payment {
+  float: right; 
+}  this can be used to put the payment input to the left */
+
+
+.center{
+display: grid;
+}
+
+.regForm{
+  background-color: azure;
+  display: block;
+  margin: 0 auto;
+  
+}
+
+button {
+  background-color: rgb(243, 203, 243);
+  font-size: x-large;
+  font-family: 'Play', sans-serif;
+  
+}
+
+.regButtonSec{
+  display:grid;
+  justify-items: center;
+  justify-content: center;
+}
+
+
+.grid-form{
+  width: 90%;
+  margin: 0 auto;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap:1.25vw;
+  background-color: white;
+  padding: 2.3vw;
+  margin-top: 20px;
+}
+.grid-field{
+  color: #9592ff;
+  padding: 10px;
+}
+  .grid-field > input{
+      margin-left: 1vw;
+  }
+
+.grid-field-title{
+  grid-column:span 2;
+  text-align: center;
+  background-color:white;
+  border-style:solid;
+  border-width:2px;
+  border-color:#9592ff;
+  font-family: 'Play', sans-serif;
+  font-size: xx-large;
+}
+.grid-field-huge{
+  grid-column: span 2;
+}
+
+.grid-field-6{
+  display: grid;
+  grid-row-start: 6;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap:1.25vw;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+background-color: #9592ff !important;
+}
+.btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
+background-color: #ff7571 !important;
+}
