@@ -39,13 +39,9 @@ export class AccountComponent implements OnInit {
     console.log(this.addedMoney);
     console.log(this.loggedUser.balance);
 
-    this.userService.update(this.loggedUser).subscribe(
+    this.userService.updateUser(this.loggedUser).subscribe(
       resp=>{
         console.log("WERE RECEIVING THIS BAK " + resp);
-        console.log(resp.body);
-        console.log(resp.status)
-        this.loggedUser = resp.body;
-        this.statusCode = resp.status;
         console.log("HEY THIS IS UPDATED USER " + this.loggedUser);
         window.location.reload();
       }
