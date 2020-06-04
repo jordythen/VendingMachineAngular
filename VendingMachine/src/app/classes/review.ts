@@ -1,9 +1,9 @@
 export class Review {
 
     id: number;
-    rating: number;
-    comment: string;
+    starRating: number;
+    comments: string;
     reviewTime: string;
-
+    vendingMachineId: number;
 
 }

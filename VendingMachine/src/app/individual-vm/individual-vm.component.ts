@@ -9,6 +9,9 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Snack } from '../classes/snack';
 import { SnackType } from '../classes/snacktype';
 import { SnackService } from '../snack.service';
+import { ReviewService } from '../review.service';
+import { Review } from '../classes/review';
+import { Session } from 'protractor';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -71,7 +74,9 @@ export class NgbdModalContent {
 })
 export class IndividualVMComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, private route: ActivatedRoute, private vmService: VendingmachineService) { }
+  constructor(private modalService: NgbModal, private route: ActivatedRoute, 
+              private vmService: VendingmachineService,
+              private reviewService: ReviewService) { }
 
   shoppingCart = faShoppingCart;
   star = faStar;
@@ -136,7 +141,34 @@ export class IndividualVMComponent implements OnInit {
     document.getElementById('ratingsOverlay').style.display = 'none';	
   }
   submitRating(): void {	
-    // TODO, just closes for testing
+    let stars = document.getElementsByName('ratingSelect') as NodeListOf<HTMLInputElement>;
+    let rating = '5';
+    for (let i = 0, length = stars.length; i < length; i++) {
+      if (stars[i].checked) {
+        rating = stars[i].value;
+      }
+    }
+    let commentBox = document.getElementById('cmtText') as HTMLTextAreaElement;
+    let comment = commentBox.value;
+    // alert(rating + " : " + comment);
+    let newReview = new Review();
+    newReview.id = 0;
+    newReview.vendingMachineId = 1; // TODO........... this needs to be the id of the machine we are looking at...
+    newReview.starRating = parseInt(rating);
+    newReview.comments = comment;
+    //newReview.reviewTime = new Date().toString();
+    newReview.reviewTime = ' ';
+
+    this.reviewService.addReview(newReview).subscribe(
+      resp => {
+        console.log(resp);
+        if (resp) {
+          alert('Review added');
+        } else {
+          alert('Error adding review');
+        }
+      }
+    );
     document.getElementById('ratingsOverlay').style.display = 'none';	
   }
   // ----------------------------------------------------------------------
