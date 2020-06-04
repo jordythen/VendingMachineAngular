@@ -22,6 +22,7 @@ import { MakeofferComponent } from './makeoffer/makeoffer.component';
 import { ViewofferComponent } from './viewoffer/viewoffer.component';
 import { IndividualVMComponent } from './individual-vm/individual-vm.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     VendingmachineComponent,
     AccountComponent,
     RegisterComponent,
-
+    HomeComponent,
     MyVendingmachineComponent,
     MakeofferComponent,
     ViewofferComponent,

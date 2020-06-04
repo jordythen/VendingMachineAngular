@@ -1,6 +1,12 @@
-h1{
-    font-family: 'Play', sans-serif;
-    font-size: xx-large;
-    text-align: center
-    ;
-  }
+
+	<div class="grid-form img-rounded">
+        <div class="grid-field-title" *ngIf="!loggedUser"><label>Welcome!</label></div>
+        <div class="grid-field-title" *ngIf="loggedUser"><label> Welcome {{loggedUser.firstName}} {{loggedUser.lastName}}!</label></div>
+		<div class="grid-field" style="margin-top:30px"> 
+			<label >This application is designed for users to buy and trade snacks at their own choosing!</label>
+        </div>
+        <div class="grid-field" style="margin-top:30px"> 
+			<label>Created By: Jordy Then, Michael Mead, Dustin Dwyer, Alex Patton and Ryan Gerold</label>
+		</div>
+    </div>
+ 

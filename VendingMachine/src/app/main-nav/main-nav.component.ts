@@ -69,8 +69,10 @@ export class MainNavComponent implements OnInit, OnChanges {
       resp => {
         this.router.navigate(['home']);
         this.loggedUser = null;
+        
       }
     );
+    window.location.reload;
   }
 
   someMethod() {
