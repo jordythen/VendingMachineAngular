@@ -135,6 +135,9 @@ export class MyVendingmachineComponent implements OnInit, DoCheck {
         this.statusCode = resp.status;
         //alert(this.statusCode);
         console.log(resp.body);
+        if(this.statusCode === 200){
+          alert("You've successfully created an account. Please log in!");
+        }
         window.location.reload();
       }
     );
